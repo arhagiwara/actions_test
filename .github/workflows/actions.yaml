@@ -1,0 +1,23 @@
+name: workflow_dispatch sample 1
+
+on:
+  workflow_dispatch:
+
+jobs:
+  printLog:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      id: checkout
+      uses: actions/checkout@v4
+
+    - name: Test Local Action
+      id: test-action
+      uses: arhagiwara/container-action-try@763de430b33d0b74b776d50a23f20945c47bbe79 # Commit with the `v1` tag
+      with:
+        who-to-greet: hagiwara
+
+    - name: Print Output
+      id: output
+      run: echo "${{ steps.test-action.outputs.greeting }}"
