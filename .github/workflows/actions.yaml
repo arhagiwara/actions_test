@@ -14,7 +14,7 @@ jobs:
 
     - name: Test Local Action
       id: test-action
-      uses: arhagiwara/container-action-try@latest # Commit with the `v1` tag
+      uses: arhagiwara/container-action-try@f135f7965abb5887fd2c5fc67b236675c8fb67a8 # Commit with the `v1` tag
       with:
         who-to-greet: hagiwara
 
