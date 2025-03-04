@@ -22,4 +22,4 @@ jobs:
       id: output
       run: |
           echo "${{ steps.test-action.outputs.greeting }}"
-          echo "{{ steps.test-action.outputs.result }}"
+          echo "${{ steps.test-action.outputs.result }}"
