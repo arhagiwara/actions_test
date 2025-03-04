@@ -20,4 +20,6 @@ jobs:
 
     - name: Print Output
       id: output
-      run: echo "${{ steps.test-action.outputs.greeting }}" "{{ steps.test-action.outputs.result }}"
+      run: |
+          echo "${{ steps.test-action.outputs.greeting }}"
+          echo "{{ steps.test-action.outputs.result }}"
