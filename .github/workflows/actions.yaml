@@ -9,7 +9,8 @@ jobs:
     permissions:
       checks: read
       pull-requests: write
-    
+      contents: write
+      
     steps:
     - name: Checkout
       id: checkout
@@ -17,7 +18,7 @@ jobs:
 
     - name: Test Local Action
       id: test-action
-      uses: arhagiwara/typescript-action@1376734f260ef43df2af43934e6152dcfc8c6b7c
+      uses: arhagiwara/typescript-action@792382e62a0e3c198d3fa92e88f4803027660cff
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
 
