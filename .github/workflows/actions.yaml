@@ -18,7 +18,7 @@ jobs:
 
     - name: Test Local Action
       id: test-action
-      uses: arhagiwara/typescript-action@e8d43ad3ae7b1e1bdb5935431031b4f02ab64cb8
+      uses: arhagiwara/typescript-action@792382e62a0e3c198d3fa92e88f4803027660cff
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
 
