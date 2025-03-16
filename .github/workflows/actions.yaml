@@ -6,6 +6,9 @@ on:
 jobs:
   printLog:
     runs-on: ubuntu-latest
+    permissions:
+      checks: read
+      pull-requests: write
     
     steps:
     - name: Checkout
@@ -14,12 +17,7 @@ jobs:
 
     - name: Test Local Action
       id: test-action
-      uses: arhagiwara/container-action-try@f135f7965abb5887fd2c5fc67b236675c8fb67a8 # Commit with the `v1` tag
+      uses: arhagiwara/typescript-action@1376734f260ef43df2af43934e6152dcfc8c6b7c
       with:
-        who-to-greet: hagiwara
+        token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Print Output
-      id: output
-      run: |
-          echo "${{ steps.test-action.outputs.greeting }}"
-          echo "${{ steps.test-action.outputs.result }}"
